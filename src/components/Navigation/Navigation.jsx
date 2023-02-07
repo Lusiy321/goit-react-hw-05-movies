@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 export const Navigation = () => (
   <>
     <Nav>
-      <Link to="/">Home</Link>
+      <Link to="/goit-react-hw-05-movies">Home</Link>
       <Link to="movies">Movies</Link>
     </Nav>
     <Outlet />
