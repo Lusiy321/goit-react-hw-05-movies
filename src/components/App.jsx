@@ -17,7 +17,7 @@ import { Home } from 'pages/Home';
 export const App = () => (
   <>
     <Routes>
-      <Route path="/" element={<Navigation />}>
+      <Route path="/goit-react-hw-05-movies" element={<Navigation />}>
         <Route
           index
           element={
