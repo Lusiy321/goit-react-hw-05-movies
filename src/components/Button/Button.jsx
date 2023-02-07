@@ -1,16 +1,11 @@
+import { useLocation, Link } from 'react-router-dom';
 import { ButtonBack } from './Button.styled';
-import { PropTypes } from 'react-types';
 
-export const Button = ({ children, disabled, onclick }) => {
+export const Button = () => {
+  const location = useLocation();
   return (
-    <ButtonBack disabled={disabled} onClick={onclick}>
-      {children}
+    <ButtonBack>
+      <Link to={location?.state?.from ?? '/'}>go back</Link>
     </ButtonBack>
   );
-};
-
-Button.propTypes = {
-  children: PropTypes.node,
-  onClick: PropTypes.func.isRequired,
-  disabled: PropTypes.bool,
 };
