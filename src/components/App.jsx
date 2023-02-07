@@ -1,27 +1,28 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { Loader } from './Loader/Loader';
-import { Home } from 'pages/Home';
-import { Routes, Route } from 'react-router-dom';
-import { Styles } from './Styles';
+import { Route, Routes } from 'react-router-dom';
 import { Navigation } from './Navigation/Navigation';
+import { FilmPage } from 'pages/FilmPage';
+import { Actors } from 'pages/Actors';
+import { Reviews } from 'pages/MovieRev';
+import { Movies } from 'pages/SearchMovie';
+import { Home } from 'pages/Home';
 
-const HomeView = lazy(() => import('./pages/Home.jsx'));
-const MoviesView = lazy(() => import('./pages/SearchMovie.jsx'));
-const FilmView = lazy(() => import('./pages/FilmPage.jsx'));
-const Cast = lazy(() => import('./pages/Actors.jsx'));
-const Reviews = lazy(() => import('./pages/MovieRev.jsx'));
+// const HomeView = lazy(() => import('../pages/Home.jsx'));
+// const MoviesView = lazy(() => import('../pages/SearchMovie.jsx'));
+// const FilmView = lazy(() => import('../pages/FilmPage.jsx'));
+// const Actors = lazy(() => import('../pages/Actors.jsx'));
+// const Reviews = lazy(() => import('../pages/MovieRev.jsx'));
 
 export const App = () => (
   <>
-    <Styles />
-    <Home></Home>
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route
           index
           element={
             <Suspense fallback={<Loader />}>
-              <HomeView />
+              <Home />
             </Suspense>
           }
         />
@@ -29,7 +30,7 @@ export const App = () => (
           path="movies"
           element={
             <Suspense fallback={<Loader />}>
-              <MoviesView />
+              <Movies />
             </Suspense>
           }
         />
@@ -37,7 +38,7 @@ export const App = () => (
           path="movies/:itemId"
           element={
             <Suspense fallback={<Loader />}>
-              <FilmView />
+              <FilmPage />
             </Suspense>
           }
         >
@@ -45,7 +46,7 @@ export const App = () => (
             path="cast"
             element={
               <Suspense fallback={<Loader />}>
-                <Cast />
+                <Actors />
               </Suspense>
             }
           />

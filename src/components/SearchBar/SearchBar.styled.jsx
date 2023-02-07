@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { BsSearch } from 'react-icons/bs';
 
-export const Searchbar = styled.header`
+export const Header = styled.header`
   top: 0;
   left: 0;
   position: sticky;
@@ -31,7 +30,7 @@ export const Form = styled.form`
 `;
 
 export const Button = styled.button`
-  display: inline-block;
+  isplay: inline-block;
   width: 50px;
   height: 50px;
   border: 0;
@@ -45,10 +44,6 @@ export const Button = styled.button`
   &:hover {
     opacity: 1;
   }
-`;
-
-export const Icon = styled(BsSearch)`
-  color: gray;
 `;
 
 export const Input = styled.input`
