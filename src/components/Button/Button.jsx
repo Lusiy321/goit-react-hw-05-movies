@@ -5,7 +5,9 @@ export const Button = () => {
   const location = useLocation();
   return (
     <ButtonBack>
-      <Link to={location?.state?.from ?? '/'}>go back</Link>
+      <Link to={location?.state?.from ?? '/goit-react-hw-05-movies'}>
+        go back
+      </Link>
     </ButtonBack>
   );
 };
