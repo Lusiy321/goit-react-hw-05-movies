@@ -4,7 +4,7 @@ import { fetchMovieId } from 'API/MovieAPI';
 import { Loader } from 'components/Loader/Loader';
 import { FilmDetails } from 'components/FilmDetails/FilmDetails';
 
-export const FilmPage = () => {
+const FilmPage = () => {
   const [status, setStatus] = useState('idle');
   const [film, setFilm] = useState(null);
   const [error, setError] = useState(null);
@@ -60,3 +60,5 @@ export const FilmPage = () => {
     return <h2>{error}</h2>;
   }
 };
+
+export default FilmPage;

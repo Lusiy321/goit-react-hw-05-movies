@@ -19,6 +19,11 @@ export const List = styled.ul`
   margin: 20px;
 `;
 
+export const Item = styled.li`
+  list-style: none;
+  width: 300px;
+`;
+
 export const ItemLink = styled(Link)`
   display: block;
   margin-bottom: 5px;

@@ -4,7 +4,7 @@ import { fetchMovieRev } from 'API/MovieAPI';
 import { RevList } from 'components/RevList/RevList';
 import { Loader } from 'components/Loader/Loader';
 
-export const Reviews = () => {
+const Reviews = () => {
   const [status, setStatus] = useState('idle');
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -48,3 +48,5 @@ export const Reviews = () => {
     return <h2>{error}</h2>;
   }
 };
+
+export default Reviews;

@@ -50,13 +50,12 @@ export const Input = styled.input`
   display: inline-block;
   width: 100%;
   font: inherit;
-  font-size: 18px;
+  font-size: 22px;
   border: none;
   border-radius: 10px;
   outline: none;
   margin-right: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 15px;
   &::placeholder {
     font: inherit;
     font-size: 18px;

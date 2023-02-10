@@ -4,7 +4,7 @@ import { fetchMovieAct } from 'API/MovieAPI';
 import { Loader } from 'components/Loader/Loader';
 import { ActorsBlock } from 'components/ActorsList/ActorsBlock';
 
-export const Actors = () => {
+const Actors = () => {
   const [status, setStatus] = useState('idle');
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -42,3 +42,4 @@ export const Actors = () => {
     return <h3>{error}</h3>;
   }
 };
+export default Actors;

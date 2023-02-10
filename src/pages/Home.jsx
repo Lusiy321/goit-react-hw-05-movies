@@ -3,7 +3,7 @@ import { Loader } from 'components/Loader/Loader';
 import { fetchPopularMovie } from 'API/MovieAPI';
 import { MovieList } from 'components/MovieList/MovieList';
 
-export const Home = () => {
+const Home = () => {
   const [popularFilms, setPopularFilms] = useState([]);
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState(null);
@@ -37,3 +37,5 @@ export const Home = () => {
   }
   console.log(popularFilms);
 };
+
+export default Home;

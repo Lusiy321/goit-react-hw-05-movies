@@ -8,6 +8,7 @@ import {
   InfoList,
   InfoTitle,
   InfoWrap,
+  Section,
 } from './FilmDetails.styled';
 
 export const FilmDetails = ({
@@ -24,8 +25,8 @@ export const FilmDetails = ({
   const fullPath = `https://image.tmdb.org/t/p/w500${poster}`;
   return (
     <>
-      <Button from={'home'} />
-      <section>
+      <Section>
+        <Button from={'home'} />
         <DetailsWrap>
           <ImgWrap>
             <img src={fullPath} alt={title} width="274px" height="398px" />
@@ -56,7 +57,7 @@ export const FilmDetails = ({
             </InfoItem>
           </InfoList>
         </InfoWrap>
-      </section>
+      </Section>
       <Outlet />
     </>
   );

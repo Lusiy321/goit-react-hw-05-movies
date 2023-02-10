@@ -1,65 +1,27 @@
-import { Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Loader } from './Loader/Loader';
 import { Route, Routes } from 'react-router-dom';
 import { Navigation } from './Navigation/Navigation';
-import { FilmPage } from 'pages/FilmPage';
-import { Actors } from 'pages/Actors';
-import { Reviews } from 'pages/MovieRev';
-import { Movies } from 'pages/SearchMovie';
-import { Home } from 'pages/Home';
 
-// const HomeView = lazy(() => import('../pages/Home.jsx'));
-// const MoviesView = lazy(() => import('../pages/SearchMovie.jsx'));
-// const FilmView = lazy(() => import('../pages/FilmPage.jsx'));
-// const Actors = lazy(() => import('../pages/Actors.jsx'));
-// const Reviews = lazy(() => import('../pages/MovieRev.jsx'));
+const Home = lazy(() => import('../pages/Home'));
+const Movies = lazy(() => import('../pages/SearchMovie'));
+const FilmPage = lazy(() => import('../pages/FilmPage'));
+const Actors = lazy(() => import('../pages/Actors'));
+const Reviews = lazy(() => import('../pages/MovieRev'));
 
 export const App = () => (
   <>
-    <Routes>
-      <Route path="/goit-react-hw-05-movies" element={<Navigation />}>
-        <Route
-          index
-          element={
-            <Suspense fallback={<Loader />}>
-              <Home />
-            </Suspense>
-          }
-        />
-        <Route
-          path="movies"
-          element={
-            <Suspense fallback={<Loader />}>
-              <Movies />
-            </Suspense>
-          }
-        />
-        <Route
-          path="movies/:itemId"
-          element={
-            <Suspense fallback={<Loader />}>
-              <FilmPage />
-            </Suspense>
-          }
-        >
-          <Route
-            path="cast"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Actors />
-              </Suspense>
-            }
-          />
-          <Route
-            path="revievs"
-            element={
-              <Suspense fallback={<Loader />}>
-                <Reviews />
-              </Suspense>
-            }
-          />
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/goit-react-hw-05-movies" element={<Navigation />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="movies/:itemId" element={<FilmPage />}>
+            <Route path="cast" element={<Actors />} />
+            <Route path="revievs" element={<Reviews />} />
+          </Route>
         </Route>
-      </Route>
-    </Routes>
+      </Routes>
+    </Suspense>
   </>
 );

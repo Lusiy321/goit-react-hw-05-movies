@@ -5,7 +5,7 @@ import { Loader } from 'components/Loader/Loader';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { MovieList } from 'components/MovieList/MovieList';
 
-export const Movies = () => {
+const Movies = () => {
   const [name, setName] = useState(null);
   const [status, setStatus] = useState('idle');
   const [films, setFilms] = useState([]);
@@ -72,3 +72,4 @@ export const Movies = () => {
     );
   }
 };
+export default Movies;

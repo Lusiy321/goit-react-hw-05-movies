@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const ButtonBack = styled.button`
   max-width: 250px;
@@ -25,5 +26,15 @@ export const ButtonBack = styled.button`
   &:hover,
   &:focus {
     background-color: #2f2f37;
+  }
+`;
+
+export const Link = styled(NavLink)`
+  color: gray;
+  font-size: 30px;
+  margin: 20px;
+  text-decoration: none;
+  &.active {
+    color: red;
   }
 `;
