@@ -19,12 +19,12 @@ export const MovieList = ({ films, from }) => {
           <List>
             {films.map(film => (
               <Item key={film.id}>
-                <Image
-                  src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
-                  alt={film.original_title}
-                ></Image>
                 <ItemLink to={`movies/${film.id}`}>
-                  {film.original_title}{' '}
+                  <Image
+                    src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+                    alt={film.original_title}
+                  ></Image>
+                  {film.original_title} ({film.release_date.slice(0, 4)})
                 </ItemLink>
               </Item>
             ))}
@@ -38,12 +38,12 @@ export const MovieList = ({ films, from }) => {
       <List>
         {films.map(film => (
           <Item key={film.id}>
-            <Image
-              src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
-              alt={film.original_title}
-            ></Image>
             <ItemLink to={film.id.toString()} state={{ from: location }}>
-              {film.original_title}
+              <Image
+                src={`https://image.tmdb.org/t/p/w500${film.poster_path}`}
+                alt={film.original_title}
+              ></Image>
+              {film.original_title} ({film.release_date.slice(0, 4)})
             </ItemLink>
           </Item>
         ))}

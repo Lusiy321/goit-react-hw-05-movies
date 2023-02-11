@@ -14,10 +14,12 @@ export const Section = styled.section`
 export const DetailsWrap = styled.div`
   display: flex;
   margin: 20px auto;
-  justyfy-content: center;
   width: 90%;
 `;
-
+export const FilmInf = styled.div`
+  display: block;
+  width: auto;
+`;
 export const ImgWrap = styled.div`
   margin-right: 30px;
 `;

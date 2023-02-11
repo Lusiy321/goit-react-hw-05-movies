@@ -13,7 +13,7 @@ export const Title = styled.h1`
 export const List = styled.ul`
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   gap: 30px;
   font-size: 20px;
   margin: 20px;

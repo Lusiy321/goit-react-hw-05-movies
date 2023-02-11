@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Button } from 'components/Button/Button';
 import {
   DetailsWrap,
+  FilmInf,
   ImgWrap,
   InfoItem,
   InfoLink,
@@ -31,7 +32,7 @@ export const FilmDetails = ({
           <ImgWrap>
             <img src={fullPath} alt={title} width="274px" height="398px" />
           </ImgWrap>
-          <div>
+          <FilmInf>
             <h2>
               {title} ({yearRelease})
             </h2>
@@ -44,7 +45,7 @@ export const FilmDetails = ({
                 <span key={genr.id}>{genr.name} </span>
               ))}
             </p>
-          </div>
+          </FilmInf>
         </DetailsWrap>
         <InfoWrap>
           <InfoTitle>Additional information</InfoTitle>

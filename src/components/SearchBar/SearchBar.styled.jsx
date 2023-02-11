@@ -33,6 +33,7 @@ export const Button = styled.button`
   isplay: inline-block;
   width: 50px;
   height: 50px;
+  padding: 5px;
   border: 0;
   background-size: 40%;
   background-repeat: no-repeat;
